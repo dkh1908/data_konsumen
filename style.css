@@ -1,0 +1,336 @@
+.navStyle {
+  margin-top: 1rem;
+  margin-left: 1rem;
+  outline: 2px solid black;
+  border-radius: 2px;
+  text-align: center;
+}
+.nav-item:hover {
+  color: white;
+}
+
+#home {
+  width: 18rem;
+  margin: auto;
+}
+
+footer {
+  background-color: #333;
+  color: #fff;
+  padding: 20px;
+  width: 100%;
+  text-align: center;
+}
+
+.footer-contact {
+  margin: auto;
+}
+
+.footer-contact h2 {
+  color: #fff;
+}
+
+.footer-contact p {
+  color: #ccc;
+  line-height: 1.6;
+}
+
+.footer-contact a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.footer-contact a:hover {
+  text-decoration: underline;
+}
+.sosmed {
+  width: 2rem;
+  height: 2rem;
+  margin-left: 1rem;
+}
+.skills-section {
+  display: flex;
+  justify-content: center;
+  margin: 20px;
+}
+.cards {
+  background-color: black;
+  border-radius: 5px;
+  outline: 2px solid white;
+  color: white;
+  width: 300px;
+  padding: 20px;
+  text-align: left;
+}
+#home {
+  width: 18rem;
+  margin: auto;
+}
+.about {
+  background-color: black;
+  border-radius: 5px;
+  outline: 2px solid white;
+  color: white;
+  width: 19rem;
+  display: flex;
+  justify-content: center;
+}
+.carda {
+  text-align: left;
+}
+.skills {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.skill {
+  margin: 3px;
+  flex: 1;
+  text-align: center;
+}
+
+.logo {
+  width: 50px;
+  height: 50px;
+  display: block;
+  margin: 0 auto 10px;
+}
+
+.cardS {
+  background-color: #4d4855;
+  background-image: linear-gradient(147deg, #000000 0%, #000420 74%);
+  border-radius: 8%;
+  outline: 2px solid white;
+  padding-bottom: 30px;
+}
+body {
+  background-color: #393e46;
+}
+@font-face {
+  font-family: "gecko";
+  src: url("Gecko-Lunch.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "altone";
+  src: url("Altone_Trial-Bold.ttf") format("truetype");
+}
+.container {
+  transform: scale(1.2);
+}
+.card1 {
+  padding-bottom: 30px;
+}
+
+#uu {
+  transition: box-shadow 0.3s ease;
+  display: block;
+  margin: auto;
+}
+
+#uu.playing {
+  box-shadow: 0 0 10px 5px white;
+}
+.slide1 {
+  background-image: url(1.jpeg);
+}
+.slider {
+  text-align: webkitp;
+  overflow: hidden;
+  margin: auto;
+}
+
+.slides {
+  display: flex;
+  gap: 80px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+}
+
+.slides::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+.slides::-webkit-scrollbar-thumb {
+  background: black;
+  border-radius: 10px;
+}
+.slides::-webkit-scrollbar-track {
+  background: transparent;
+}
+.slides > .card {
+  scroll-snap-align: start;
+  flex-shrink: 0;
+  border-radius: 10px;
+  transform-origin: center center;
+  transform: scale(1);
+  transition: transform 0.5s;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.slides > .card:target {
+}
+
+.slider > a {
+  display: inline-flex;
+  width: 1.5rem;
+  height: 1.5rem;
+  text-decoration: none;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  margin: 0 0 0.5rem 0;
+  position: relative;
+}
+.slider > a:active {
+  top: 1px;
+}
+.slider > a:focus {
+  background: #000;
+}
+
+.project1 {
+  width: 50%;
+  height: 50%;
+  background-color: white;
+}
+.cardm > img {
+  height: 200px;
+}
+.cardm {
+  width: 18rem;
+  background-color: black;
+  color: white;
+  margin-left: 30px;
+  padding: 7px;
+  border: 2px solid white;
+}
+.slides > .cardm {
+  flex: 0 0 auto;
+}
+
+.typewrite {
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 0.15em solid #fff;
+
+  animation:
+    typing 2s steps(20, end),
+    blink-caret 0.75s step-end infinite;
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes blink-caret {
+  from,
+  to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: #fff;
+  }
+}
+#loading-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  z-index: 9999;
+}
+
+.spinner {
+  border: 16px solid #f3f3f3;
+  border-top: 16px solid #3498db;
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.about-me {
+  width: 22rem;
+  margin: auto;
+  outline: 2px solid white;
+  background-color: black;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.about-me h2 {
+  color: white;
+}
+.about-me p {
+  color: white;
+  line-height: 1.6;
+}
+.altone {
+  font-family: altone;
+}
+
+.about-me input,
+.about-me select {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  margin-bottom: 15px;
+  background-color: #222;
+  color: white;
+  border: 1px solid white;
+  border-radius: 4px;
+  font-family: "Segoe UI", Arial, sans-serif !important;
+  box-sizing: border-box;
+}
+
+.about-me button {
+  width: 100%;
+  padding: 12px;
+  background-color: black;
+  color: white;
+  border: 2px solid white;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 10px;
+  text-transform: uppercase;
+}
+
+.about-me button:hover {
+  background-color: white;
+  color: black;
+}
+
+section {
+  min-height: calc(100vh - 56px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 56px;
+  box-sizing: border-box;
+}

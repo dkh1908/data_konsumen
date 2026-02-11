@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Survei Digital SMK INFORMATIKA BINA GENERASI 3</title>
+    <link rel="stylesheet" href="style.css"> 
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;s
+            min-height: 100vh;
+            margin: 0;
+            background-color: #393e46;
+        }
+        label {
+        color: white; !important;
+        }
+        .about-me {
+            width: 18.4rem;
+        }
+
+        
+    @media (min-width: 1200px) {
+        .about-me {
+            width: 25rem;
+        }
+  }
+    </style>
+</head>
+<body>
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link navStyle" aria-current="page" href="index.html">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link disabled text-center" style="font-family: gecko;" aria-disabled="true">CloneTerial</a>
+        </li>
+      </ul>
+    </div>
+
+    
+<div class="about-me">
+    
+    <h2 style="text-align: center;">DATA KONSUMEN</h2>
+    
+    <form name="submit-to-google-sheet">
+        
+        <label>Nama</label>
+        <input type="name" name="Nama" placeholder="Contoh: Hasan Karamoy" required>
+        <label>Usia</label>
+        <input type="number" name="Usia" placeholder="Contoh: 17" required>
+
+        <label>Perangkat Digunakan</label>
+        <select name="Perangkat Yang Digunakan" required>
+            <option value="" disabled selected>Pilih Perangkat...</option>
+            <option value="HP Android">HP Android</option>
+            <option value="iPhone (iOS)">iPhone (iOS)</option>
+            <option value="Laptop/PC">Laptop/PC</option>
+            <option value="Tablet">Tablet</option>
+        </select>
+
+        <label>Media Digital Favorit</label>
+        <select name="Media Digital Favorit" required>
+            <option value="" disabled selected>Pilih Media...</option>
+            <option value="Instagram">Instagram</option>
+            <option value="TikTok">TikTok</option>
+            <option value="YouTube">YouTube</option>
+            <option value="Facebook">Facebook</option>
+            <option value="Website">Website/Blog</option>
+        </select>
+
+        <label>Waktu Akses Sosmed?</label>
+        <select name="Waktu Akses" required>
+            <option value="" disabled selected>Pilih Waktu...</option>
+            <option value="Pagi (06:00 - 11:00)">Pagi (06:00 - 11:00)</option>
+            <option value="Siang (11:00 - 15:00)">Siang (11:00 - 15:00)</option>
+            <option value="Sore (15:00 - 18:00)">Sore (15:00 - 18:00)</option>
+            <option value="Malam (18:00 - 24:00)">Malam (18:00 - 24:00)</option>
+            <option value="Dini Hari">Dini Hari</option>
+        </select>
+
+        <button type="submit">KIRIM DATA</button>
+    </form>
+    <p id="status" style="text-align: center; margin-top: 10px;"></p>
+</div>
+<script>
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbzKvlwbhXuYnSa4A3kP_5WBSwbBb48SUfG1rMq2x7ilqAA-ATNYBboBCkqwEEQOANo-/exec';
+    
+    const form = document.forms['submit-to-google-sheet'];
+    const statusMsg = document.getElementById('status');
+
+    form.addEventListener('submit', e => {
+        e.preventDefault();
+        statusMsg.innerText = "MENGIRIM DATA...";
+        statusMsg.style.color = "#ccc"; 
+        
+        fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+            .then(response => {
+                statusMsg.innerText = "DATA TERKIRIM!";
+                statusMsg.style.color = "#00FF00"; 
+                form.reset();
+            })
+            .catch(error => {
+                statusMsg.innerText = "ERROR!";
+                statusMsg.style.color = "red";
+                console.error('Error!', error.message);
+            });
+    });
+</script>
+    
+</body>
+</html>
